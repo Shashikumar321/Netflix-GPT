@@ -4,13 +4,6 @@ export const LOGO =
 export const USER_AVATAR =
   "https://occ-0-6247-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdpkabKqQAxyWzo6QW_ZnPz1IZLqlmNfK-t4L1VIeV1DY00JhLo_LMVFp936keDxj-V5UELAVJrU--iUUY2MaDxQSSO-0qw.png?r=e6e";
 
-export const API_OPTIONS = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
-  },
-};
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
 
@@ -22,3 +15,17 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "hindi", name: "Hindi" },
   { identifier: "spanish", name: "Spanish" },
 ];
+
+
+
+export const API_KEY = 'd1397538f4dda06506572e86073d7ea0';
+
+export const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMTM5NzUzOGY0ZGRhMDY1MDY1NzJlODYwNzNkN2VhMCIsIm5iZiI6MTczODEyODQ1My42ODgsInN1YiI6IjY3OTliYzQ1MDEzODNjZjFlNmMwYzliMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.JYwrQBBgkAm4SftxX8SazUM2f3ZskkGZF0zt0F7z1B4';
+
+export const API_OPTIONS = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization: "Bearer " + ACCESS_TOKEN
+  },
+};
