@@ -16,8 +16,6 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "spanish", name: "Spanish" },
 ];
 
-
-
 export const API_KEY = 'd1397538f4dda06506572e86073d7ea0';
 
 export const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMTM5NzUzOGY0ZGRhMDY1MDY1NzJlODYwNzNkN2VhMCIsIm5iZiI6MTczODEyODQ1My42ODgsInN1YiI6IjY3OTliYzQ1MDEzODNjZjFlNmMwYzliMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.JYwrQBBgkAm4SftxX8SazUM2f3ZskkGZF0zt0F7z1B4';
