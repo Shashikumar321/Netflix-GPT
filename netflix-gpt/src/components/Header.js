@@ -7,11 +7,13 @@ import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
+import { toggleGptSearchView } from "../utils/gptSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
+  const gpt = useSelector((store) => store.gpt);
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
@@ -43,22 +45,22 @@ const Header = () => {
       .catch((error) => {});
   };
 
+  const handleGptSearchClick = () => {
+    dispatch(toggleGptSearchView());
+  }
+
   return (
-    <div className="absolute w-full h-20 px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
+    <div className="absolute w-full h-20 px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
       <div className="">
-        <img className="w-56" src={LOGO} alt="logo" />
+        <img className="w-32 md:w-44 mx-auto md:mx-0" src={LOGO} alt="logo" />
       </div>
       {user && (
-        <div className=" flex z-10">
-          <p className="m-6 font-bold">{user.displayName}</p>
-          <img
-            className="m-4 w-10 h-10 shadow-xl"
-            src={USER_AVATAR}
-            alt="logo"
-          />
+        <div className="flex z-10 justify-between">
+          <p className="m-3 md:m-6 text-gray-300 font-bold">{user.displayName}</p>
+          <button className="m-2 md:m-4 w-28 h-8 bg-purple-600 text-white rounded-md" onClick={handleGptSearchClick}>{gpt.showGptSearch ? 'Home' : 'GPT Search'}</button>
           <button
             onClick={handleSignOut}
-            className="m-4 w-20 h-10 bg-gray-300 rounded-xl shadow-xl"
+            className="m-2 md:m-4 w-20 md:w-24 h-8 bg-red-600 text-white rounded-md shadow-xl"
           >
             Sign Out
           </button>
